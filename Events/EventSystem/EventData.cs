@@ -1,4 +1,5 @@
 ﻿using System;
+using TNRD.Zeepkist.Events;
 
 namespace TNRD.Zeepkist.EventSystem
 {
@@ -40,7 +41,7 @@ namespace TNRD.Zeepkist.EventSystem
     }
 
     internal class EventData<T> : EventData
-        where T : struct
+        where T : ZeepEvent
     {
         private readonly OnEventDelegate<T> callback;
 

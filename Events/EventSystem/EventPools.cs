@@ -10,7 +10,7 @@ namespace TNRD.Zeepkist.EventSystem
             typeToPool = new Dictionary<Type, SubscriptionPool>();
 
         public static void AddToPool<T>(EventData<T> eventData)
-            where T : struct
+            where T : ZeepEvent
         {
             if (!typeToPool.TryGetValue(typeof(T), out SubscriptionPool pool))
             {

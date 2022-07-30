@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using TNRD.Zeepkist.Events;
 
 namespace TNRD.Zeepkist.EventSystem
 {
@@ -13,7 +14,7 @@ namespace TNRD.Zeepkist.EventSystem
         private static readonly Dictionary<Type, SubscriptionPool> typeToPool = new Dictionary<Type, SubscriptionPool>();
 
         public static Subscription Subscribe<T>(OnEventDelegate<T> callback)
-            where T : struct
+            where T : ZeepEvent
         {
             Subscription subscription = new Subscription(typeof(T));
             EventData<T> eventData = new EventData<T>(subscription, callback);
