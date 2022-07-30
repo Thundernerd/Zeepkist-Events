@@ -5,6 +5,14 @@
         <AssemblyName>net.tnrd.zeepkist.events</AssemblyName>
         <RootNamespace>TNRD.Zeepkist</RootNamespace>
         <Version>1.0.0</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Zeepkist Events</Title>
+        <RepositoryUrl>https://github.com/Thundernerd/Zeepkist-Events</RepositoryUrl>
+        <Authors>Christiaan Bloemendaal</Authors>
+        <Company>TNRD</Company>
+        <PackageTags>Zeepkist;Modkist</PackageTags>
+        <Description>A collection of events that can be used by mods for Zeepkist</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
