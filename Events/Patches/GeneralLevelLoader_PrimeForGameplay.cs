@@ -10,7 +10,7 @@ namespace TNRD.Zeepkist.Patches
     {
         private static void Postfix(GameMaster theMaster, string[] theLines, SkyboxManager theSkybox)
         {
-            EventDispatcher.Dispatch(new LevelLoadedEvent(GameMode.Game));
+            EventDispatcher.Dispatch(new LevelLoadedEvent(EventMode.Postfix, GameMode.Game));
         }
     }
 }

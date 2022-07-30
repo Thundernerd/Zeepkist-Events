@@ -1,19 +1,19 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace TNRD.Zeepkist.EventSystem
 {
+    [PublicAPI]
     public class Subscription : IEquatable<Subscription>
     {
-        private readonly Guid guid;
-        private readonly Type type;
+        public Guid Guid { get; }
 
-        public Guid Guid => guid;
-        public Type Type => type;
+        public Type Type { get; }
 
         public Subscription(Type type)
         {
-            this.type = type;
-            guid = Guid.NewGuid();
+            Type = type;
+            Guid = Guid.NewGuid();
         }
 
         /// <inheritdoc />
@@ -21,7 +21,7 @@ namespace TNRD.Zeepkist.EventSystem
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return guid.Equals(other.guid);
+            return Guid.Equals(other.Guid);
         }
 
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace TNRD.Zeepkist.EventSystem
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return guid.GetHashCode();
+            return Guid.GetHashCode();
         }
     }
 }

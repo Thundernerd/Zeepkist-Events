@@ -1,15 +1,16 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public struct SelectNextLevelMenuBeginEvent
+    [PublicAPI]
+    public class SelectNextLevelMenuBeginEvent : ZeepEvent
     {
-        public readonly EventMode EventMode;
         public readonly SelectNextLevelMenu Instance;
 
-        public SelectNextLevelMenuBeginEvent(EventMode eventMode,SelectNextLevelMenu instance)
+        public SelectNextLevelMenuBeginEvent(EventMode eventMode, SelectNextLevelMenu instance)
+            : base(eventMode)
         {
-            EventMode = eventMode;
             Instance = instance;
         }
     }

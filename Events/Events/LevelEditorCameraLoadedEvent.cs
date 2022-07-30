@@ -1,15 +1,16 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public readonly struct LevelEditorCameraLoadedEvent
+    [PublicAPI]
+    public class LevelEditorCameraLoadedEvent : ZeepEvent
     {
-        public readonly EventMode EventMode;
         public readonly LEV_MoveCamera MoveCamera;
 
         public LevelEditorCameraLoadedEvent(EventMode eventMode, LEV_MoveCamera moveCamera)
+            : base(eventMode)
         {
-            EventMode = eventMode;
             MoveCamera = moveCamera;
         }
     }

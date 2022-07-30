@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using TNRD.Zeepkist.EventData;
 using TNRD.Zeepkist.Events;
 using TNRD.Zeepkist.EventSystem;
 
@@ -9,7 +10,7 @@ namespace TNRD.Zeepkist.Patches
     {
         private static void Postfix(SetupGame __instance)
         {
-            EventDispatcher.Dispatch<SetupGameLoadedEvent>(__instance);
+            EventDispatcher.Dispatch(new SetupGameLoadedEvent(EventMode.Postfix, __instance));
         }
     }
 }

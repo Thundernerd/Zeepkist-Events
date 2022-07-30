@@ -1,6 +1,15 @@
-﻿namespace TNRD.Zeepkist.Events
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
+
+namespace TNRD.Zeepkist.Events
 {
-    public readonly struct EnableBigBoxEvent
+    [PublicAPI]
+    public class EnableBigBoxEvent : ZeepEvent
     {
+        public EnableBigBoxEvent(EventMode eventMode)
+            : base(eventMode)
+
+        {
+        }
     }
 }

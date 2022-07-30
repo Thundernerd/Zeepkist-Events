@@ -1,15 +1,16 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public struct LevelEditorClickScriptLoadedEvent
+    [PublicAPI]
+    public class LevelEditorClickScriptLoadedEvent : ZeepEvent
     {
-        public readonly EventMode EventMode;
         public readonly LEV_ClickScript Instance;
 
         public LevelEditorClickScriptLoadedEvent(EventMode eventMode, LEV_ClickScript instance)
+            : base(eventMode)
         {
-            EventMode = eventMode;
             Instance = instance;
         }
     }

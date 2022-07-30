@@ -1,16 +1,17 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public readonly struct DirectoryIndexUpdatedEvent
+    [PublicAPI]
+    public class DirectoryIndexUpdatedEvent : ZeepEvent
     {
-        public readonly EventMode EventMode;
         public readonly bool UpdateLevels;
         public readonly bool UpdateWorkshop;
 
         public DirectoryIndexUpdatedEvent(EventMode eventMode, bool updateLevels, bool updateWorkshop)
+        :base(eventMode)
         {
-            EventMode = eventMode;
             UpdateLevels = updateLevels;
             UpdateWorkshop = updateWorkshop;
         }

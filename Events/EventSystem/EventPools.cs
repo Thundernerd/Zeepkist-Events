@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TNRD.Zeepkist.Events;
 
 namespace TNRD.Zeepkist.EventSystem
 {
@@ -31,7 +32,7 @@ namespace TNRD.Zeepkist.EventSystem
         }
 
         public static bool TryGetPool<T>(out SubscriptionPool subscriptionPool)
-            where T : struct
+            where T : ZeepEvent
         {
             return typeToPool.TryGetValue(typeof(T), out subscriptionPool);
         }

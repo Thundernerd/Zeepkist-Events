@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using TNRD.Zeepkist.EventData;
 using TNRD.Zeepkist.Events;
 using TNRD.Zeepkist.EventSystem;
 
@@ -9,7 +10,7 @@ namespace TNRD.Zeepkist.Patches
     {
         private static void Postfix()
         {
-            EventDispatcher.Dispatch<EnableBigBoxEvent>();
+            EventDispatcher.Dispatch(new EnableBigBoxEvent(EventMode.Postfix));
         }
     }
 }

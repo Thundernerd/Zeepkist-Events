@@ -1,10 +1,15 @@
-﻿namespace TNRD.Zeepkist.Events
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
+
+namespace TNRD.Zeepkist.Events
 {
-    public readonly struct PlayerManagerLoadedEvent
+    [PublicAPI]
+    public class PlayerManagerLoadedEvent : ZeepEvent
     {
         public readonly PlayerManager PlayerManager;
 
-        public PlayerManagerLoadedEvent(PlayerManager playerManager)
+        public PlayerManagerLoadedEvent(EventMode eventMode, PlayerManager playerManager)
+            : base(eventMode)
         {
             PlayerManager = playerManager;
         }

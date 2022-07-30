@@ -1,16 +1,17 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public readonly struct GoIntoFolderEvent
+    [PublicAPI]
+    public class GoIntoFolderEvent : ZeepEvent
     {
-        public readonly EventMode EventMode;
         public readonly LevelIndex.DirectoryOrLevel Folder;
         public readonly bool ResetCard;
 
         public GoIntoFolderEvent(EventMode eventMode, ref LevelIndex.DirectoryOrLevel folder, ref bool resetCard)
+            : base(eventMode)
         {
-            EventMode = eventMode;
             Folder = folder;
             ResetCard = resetCard;
         }

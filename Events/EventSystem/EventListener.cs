@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace TNRD.Zeepkist.EventSystem
 {
+    [PublicAPI]
     public delegate void OnEventDelegate<in T>(T value);
 
+    [PublicAPI]
     public static class EventListener
     {
         private static readonly Dictionary<Type, SubscriptionPool> typeToPool = new Dictionary<Type, SubscriptionPool>();

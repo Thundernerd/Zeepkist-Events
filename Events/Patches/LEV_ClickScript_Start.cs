@@ -6,7 +6,7 @@ using TNRD.Zeepkist.EventSystem;
 namespace TNRD.Zeepkist.Patches
 {
     [HarmonyPatch(typeof(LEV_ClickScript),"Start")]
-    public class LEV_ClickScript_Start
+    internal class LEV_ClickScript_Start
     {
         private static void Postfix(LEV_ClickScript __instance)
         {

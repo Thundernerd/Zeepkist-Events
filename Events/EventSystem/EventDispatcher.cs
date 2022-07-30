@@ -1,24 +1,11 @@
-﻿using System;
+﻿using TNRD.Zeepkist.Events;
 
 namespace TNRD.Zeepkist.EventSystem
 {
-    public class EventDispatcher
+    internal class EventDispatcher
     {
-        public static void Dispatch<T>()
-            where T : struct
-        {
-            Dispatch(new T());
-        }
-
-        public static void Dispatch<T>(params object[] parameters)
-            where T : struct
-        {
-            T instance = (T)Activator.CreateInstance(typeof(T), parameters);
-            Dispatch<T>(instance);
-        }
-
         public static void Dispatch<T>(T data)
-            where T : struct
+            where T : ZeepEvent
         {
             if (!EventPools.TryGetPool<T>(out SubscriptionPool pool))
             {

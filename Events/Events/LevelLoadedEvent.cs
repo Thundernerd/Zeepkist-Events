@@ -1,12 +1,14 @@
-﻿using TNRD.Zeepkist.EventData;
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
 
 namespace TNRD.Zeepkist.Events
 {
-    public readonly struct LevelLoadedEvent
+    [PublicAPI]
+    public class LevelLoadedEvent : ZeepEvent
     {
         public readonly GameMode Mode;
 
-        public LevelLoadedEvent(GameMode mode)
+        public LevelLoadedEvent(EventMode eventMode, GameMode mode) : base(eventMode)
         {
             Mode = mode;
         }

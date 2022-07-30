@@ -1,6 +1,14 @@
-﻿namespace TNRD.Zeepkist.Events
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
+
+namespace TNRD.Zeepkist.Events
 {
-    public readonly struct QuitAdventureMapEvent
+    [PublicAPI]
+    public class QuitAdventureMapEvent : ZeepEvent
     {
+        public QuitAdventureMapEvent(EventMode eventMode)
+            : base(eventMode)
+        {
+        }
     }
 }

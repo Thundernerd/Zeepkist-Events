@@ -1,6 +1,14 @@
-﻿namespace TNRD.Zeepkist.Events
+﻿using JetBrains.Annotations;
+using TNRD.Zeepkist.EventData;
+
+namespace TNRD.Zeepkist.Events
 {
-    public readonly struct QuitGameplayEvent
+    [PublicAPI]
+    public class QuitGameplayEvent : ZeepEvent
     {
+        public QuitGameplayEvent(EventMode eventMode)
+            : base(eventMode)
+        {
+        }
     }
 }

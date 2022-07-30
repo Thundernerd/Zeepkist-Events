@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace TNRD.Zeepkist.EventSystem
 {
+    [PublicAPI]
     public class SubscriptionContainer
     {
         private readonly List<Subscription> subscriptions = new List<Subscription>();
